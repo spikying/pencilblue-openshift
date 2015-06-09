@@ -1,7 +1,7 @@
 var config = {};
 
 var env = process.env;
-if (env.NODE_ENV === "production") {
+if (env.OPENSHIFT_GEAR_DNS) {
    var useMemory = {
       "use_memory": true,
       "use_cache": false
