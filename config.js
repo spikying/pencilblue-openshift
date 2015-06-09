@@ -14,8 +14,8 @@ if (env.OPENSHIFT_GEAR_DNS) {
    config = {
       "siteName": "PencilBlue on OpenShift",
       "siteRoot": "http://" + env.OPENSHIFT_GEAR_DNS,
-      "siteIP": env.OPENSHIFT_NODEDIY_IP,
-      "sitePort": env.OPENSHIFT_NODEDIY_PORT,
+      "siteIP": env.OPENSHIFT_NODEJS_IP,
+      "sitePort": env.OPENSHIFT_NODEJS_PORT,
       "log_level": "info",
       "db": {
          "type": "mongo",
