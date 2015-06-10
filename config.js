@@ -25,29 +25,12 @@ if (env.OPENSHIFT_GEAR_DNS) {
          "name": env.OPENSHIFT_APP_NAME,
          "writeConcern": 1
       },
-      "cache": {
-         "fake": true,
-         "host": "localhost",
-         "port": 6379
-      },
       "settings": useMemory,
       "templates": useMemory,
       "plugins": {
          "caching": useMemory
       }
    };
-   if (env.OPENSHIFT_REDIS_DB_HOST || env.OPENSHIFT_REDIS_HOST) {
-      // OpenShift Redis config
-      // ENV vars will have REDIS_DB_* when the app is in a scaled environment
-      config.cache = {
-         "host": env.OPENSHIFT_REDIS_DB_HOST || env.OPENSHIFT_REDIS_HOST,
-         "port": env.OPENSHIFT_REDIS_DB_PORT || env.OPENSHIFT_REDIS_PORT,
-         "auth_pass": env.OPENSHIFT_REDIS_DB_PASSWORD || env.REDIS_PASSWORD
-      };
-      config.settings = useMemoryAndCache;
-      config.templates = useMemoryAndCache;
-      config.plugins.caching = useMemoryAndCache;
-   }
    if (env.OPENSHIFT_HAPROXY_VERSION) {
       // Scaled application
       config.cluster = {
