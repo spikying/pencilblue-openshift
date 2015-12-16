@@ -12,7 +12,7 @@ if (env.OPENSHIFT_GEAR_DNS) {
    };
    // OpenShift config settings
    config = {
-      "siteName": "PencilBlue on OpenShift",
+      "siteName": "Édito à Spiky",
       "siteRoot": "http://" + env.OPENSHIFT_GEAR_DNS,
       "siteIP": env.OPENSHIFT_NODEJS_IP,
       "sitePort": env.OPENSHIFT_NODEJS_PORT,
@@ -40,7 +40,7 @@ if (env.OPENSHIFT_GEAR_DNS) {
 } else {
    // local dev settings
    config = {
-      "siteName": "PencilBlue Local",
+      "siteName": "Édito à Spiky (local)",
       "siteRoot": "http://localhost:8080",
       "siteIP": "0.0.0.0",
       "sitePort": 8080,
